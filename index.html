@@ -550,11 +550,13 @@
     .anatomy__side--left {
       align-items: flex-end;
       text-align: right;
+      padding-right: 8px;
     }
 
     .anatomy__side--right {
       align-items: flex-start;
       text-align: left;
+      padding-left: 8px;
     }
 
     .anatomy__label {
@@ -570,17 +572,8 @@
     }
 
     .anatomy__side--left .anatomy__label {
-      flex-direction: row-reverse;
-    }
-
-    .anatomy__dot {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-      border: 3px solid var(--bg-card);
-      outline: 1px solid var(--border);
+      flex-direction: row;
+      justify-content: flex-end;
     }
 
     .anatomy__label-text {
@@ -642,9 +635,8 @@
     }
 
     .anatomy__svg line {
-      stroke: var(--negro-pymo);
+      stroke: #555;
       stroke-width: 1.5;
-      opacity: 0.55;
     }
 
     /* Unfilled circle rings on the isotipo */
@@ -808,7 +800,6 @@
               <span class="anatomy__label-name">Azul Cielo</span>
               <span class="anatomy__label-hex">#4597CB</span>
             </div>
-            <div class="anatomy__dot" style="background: #4597CB;"></div>
           </div>
         </div>
 
@@ -825,21 +816,21 @@
           -->
           <svg class="anatomy__svg" viewBox="0 0 780 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-            <!-- Azul Cielo: unfilled ring at top-left of gradient -->
+            <!-- Azul Cielo: white ring at top-left of gradient -->
             <circle class="pulse-ring" cx="310" cy="70" r="20"/>
             <circle class="marker-ring" cx="310" cy="70" r="20"/>
-            <!-- Black connector line going left -->
-            <line x1="288" y1="70" x2="230" y2="150"/>
-            <!-- Arrow tip -->
-            <polygon points="234,146 226,152 236,154" fill="var(--negro-pymo)" opacity="0.5"/>
+            <!-- Gray connector line to outer circle -->
+            <line x1="290" y1="78" x2="234" y2="142"/>
+            <!-- Outer circle: filled with brand color, gray border -->
+            <circle cx="228" cy="150" r="13" fill="#4597CB" stroke="#555" stroke-width="2.5"/>
 
-            <!-- Azul Profundo: unfilled ring at bottom-right of gradient -->
+            <!-- Azul Profundo: white ring at bottom-right of gradient -->
             <circle class="pulse-ring" cx="470" cy="230" r="20"/>
             <circle class="marker-ring" cx="470" cy="230" r="20"/>
-            <!-- Black connector line going right -->
-            <line x1="492" y1="230" x2="550" y2="150"/>
-            <!-- Arrow tip -->
-            <polygon points="546,146 554,152 544,154" fill="var(--negro-pymo)" opacity="0.5"/>
+            <!-- Gray connector line to outer circle -->
+            <line x1="490" y1="222" x2="546" y2="158"/>
+            <!-- Outer circle: filled with brand color, gray border -->
+            <circle cx="552" cy="150" r="13" fill="#6489B1" stroke="#555" stroke-width="2.5"/>
 
           </svg>
         </div>
@@ -847,7 +838,6 @@
         <!-- Right label: Azul Profundo -->
         <div class="anatomy__side anatomy__side--right">
           <div class="anatomy__label" data-color="azul-profundo">
-            <div class="anatomy__dot" style="background: #6489B1;"></div>
             <div class="anatomy__label-text">
               <span class="anatomy__label-name">Azul Profundo</span>
               <span class="anatomy__label-hex">#6489B1</span>
