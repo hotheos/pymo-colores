@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pymo | Guía de Marca y Colores Oficiales</title>
+  <meta name="description" content="Guía oficial de marca Pymo. Consulta y copia los colores corporativos en Pantone, CMYK y HEX. Descarga el logo oficial.">
+  <meta property="og:title" content="Pymo | Guía de Marca y Colores Oficiales">
+  <meta property="og:description" content="Paleta de colores oficial de Pymo. Códigos copiables en Pantone, CMYK y HEX.">
+  <meta property="og:image" content="logo-pymo.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='12' width='100' height='100' fill='%234597CB'/><text x='50' y='68' font-size='55' font-weight='bold' fill='white' text-anchor='middle' font-family='system-ui'>P</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --azul-cielo: #4597CB;
+      --azul-profundo: #6489B1;
+      --negro-pymo: #2C2B2A;
+      --blanco: #FFFFFF;
+
+      --bg: #F8F9FB;
+      --bg-card: #FFFFFF;
+      --text-primary: #1A1A2E;
+      --text-secondary: #5A5A7A;
+      --text-muted: #8E8EA0;
+      --border: #E4E4EF;
+      --border-hover: #C8C8DA;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 64px 24px 48px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero__logo {
+      width: 220px;
+      height: auto;
+      filter: drop-shadow(0 8px 32px rgba(69, 151, 203, 0.2));
+      transition: transform 0.4s ease;
+    }
+
+    .hero__logo:hover {
+      transform: scale(1.03);
+    }
+
+    .hero__title {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-top: 28px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero__subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== Section headers ===== */
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section__header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .section__desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== Color Cards Grid ===== */
+    .colors-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .color-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .color-card:nth-child(1) { animation-delay: 0.1s; }
+    .color-card:nth-child(2) { animation-delay: 0.2s; }
+    .color-card:nth-child(3) { animation-delay: 0.3s; }
+    .color-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .color-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .color-card__swatch {
+      height: 100px;
+      position: relative;
+    }
+
+    /* White swatch needs a visible border */
+    .color-card--blanco .color-card__swatch {
+      border-bottom: 1px solid var(--border);
+      background-image:
+        linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+        linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+        linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    }
+
+    .color-card--blanco .color-card__swatch::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #FFFFFF;
+      opacity: 0.85;
+    }
+
+    .color-card__body {
+      padding: 20px;
+    }
+
+    .color-card__name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .color-card__location {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .color-card__codes {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .code-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      position: relative;
+    }
+
+    .code-row:hover {
+      border-color: var(--azul-cielo);
+      background: #F0F7FC;
+    }
+
+    .code-row__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      min-width: 56px;
+    }
+
+    .code-row__value {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      flex: 1;
+      text-align: right;
+      margin-right: 8px;
+    }
+
+    .code-row__copy-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.35;
+      transition: opacity 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .code-row:hover .code-row__copy-icon {
+      opacity: 0.7;
+    }
+
+    .code-row.copied {
+      border-color: #34C759;
+      background: #F0FFF4;
+    }
+
+    .code-row.copied .code-row__copy-icon {
+      opacity: 1;
+    }
+
+    /* ===== Gradient Section ===== */
+    .gradient-showcase {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      animation: fadeInUp 0.6s ease-out both;
+      animation-delay: 0.3s;
+    }
+
+    .gradient-preview {
+      height: 160px;
+      background: linear-gradient(135deg in oklch, var(--azul-cielo), var(--azul-profundo));
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 16px 20px;
+    }
+
+    .gradient-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .gradient-body {
+      padding: 20px;
+    }
+
+    .gradient-body__title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .gradient-body__desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .gradient-code {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      gap: 12px;
+    }
+
+    .gradient-code:hover {
+      border-color: var(--azul-cielo);
+      background: #F0F7FC;
+    }
+
+    .gradient-code__value {
+      font-size: 0.78rem;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      color: var(--text-primary);
+      word-break: break-all;
+      flex: 1;
+    }
+
+    .gradient-code.copied {
+      border-color: #34C759;
+      background: #F0FFF4;
+    }
+
+    /* ===== Contrast Info ===== */
+    .contrast-info {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      animation: fadeInUp 0.6s ease-out both;
+      animation-delay: 0.4s;
+    }
+
+    .contrast-info__title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .contrast-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .contrast-row + .contrast-row {
+      border-top: 1px solid var(--border);
+    }
+
+    .contrast-swatches {
+      display: flex;
+      gap: 0;
+      flex-shrink: 0;
+    }
+
+    .contrast-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 1px var(--border);
+    }
+
+    .contrast-swatch:last-child {
+      margin-left: -10px;
+    }
+
+    .contrast-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      flex: 1;
+    }
+
+    .contrast-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .contrast-badge--aaa {
+      background: #E8F9EE;
+      color: #1B7A3D;
+    }
+
+    .contrast-badge--aa {
+      background: #FFF8E1;
+      color: #9A7B1A;
+    }
+
+    .contrast-badge--fail {
+      background: #FFEAEA;
+      color: #C0392B;
+    }
+
+    /* ===== Bulk Actions ===== */
+    .bulk-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn:hover {
+      border-color: var(--azul-cielo);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg in oklch, var(--azul-cielo), var(--azul-profundo));
+      color: white;
+      border-color: transparent;
+    }
+
+    .btn--primary:hover {
+      border-color: transparent;
+      box-shadow: 0 6px 24px rgba(69, 151, 203, 0.3);
+    }
+
+    .btn.copied {
+      border-color: #34C759;
+      background: #F0FFF4;
+      color: #1B7A3D;
+    }
+
+    .btn__icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+    }
+
+    .btn--primary .btn__icon {
+      opacity: 0.9;
+    }
+
+    /* ===== Toast ===== */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--negro-pymo);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast__icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+
+    .footer a {
+      color: var(--azul-cielo);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 40px 16px 32px;
+      }
+
+      .hero__logo {
+        width: 160px;
+      }
+
+      .colors-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bulk-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+
+      .gradient-preview {
+        height: 120px;
+      }
+
+      .contrast-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <img src="logo-pymo.png" alt="Logo oficial de Pymo" class="hero__logo" width="220" height="264">
+    <h1 class="hero__title">Guía de Marca</h1>
+    <p class="hero__subtitle">Colores oficiales, códigos y recursos para diseñadores</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Color Palette -->
+    <section class="section" id="colores">
+      <div class="section__header">
+        <h2 class="section__title">Paleta de Colores</h2>
+        <p class="section__desc">Haz clic en cualquier código para copiarlo al portapapeles</p>
+      </div>
+
+      <div class="colors-grid" id="colorsGrid">
+
+        <!-- Azul Cielo -->
+        <article class="color-card color-card--azul-cielo">
+          <div class="color-card__swatch" style="background: #4597CB;"></div>
+          <div class="color-card__body">
+            <h3 class="color-card__name">Azul Cielo</h3>
+            <p class="color-card__location">Presente en la esquina superior izquierda del isotipo, donde inicia el degradado del fondo azul.</p>
+            <div class="color-card__codes">
+              <div class="code-row" data-copy="Pantone 7688C" onclick="copyCode(this)">
+                <span class="code-row__label">Pantone</span>
+                <span class="code-row__value">7688 C</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="70, 28, 4, 0" onclick="copyCode(this)">
+                <span class="code-row__label">CMYK</span>
+                <span class="code-row__value">70, 28, 4, 0</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="#4597CB" onclick="copyCode(this)">
+                <span class="code-row__label">HEX</span>
+                <span class="code-row__value">#4597CB</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Azul Profundo -->
+        <article class="color-card color-card--azul-profundo">
+          <div class="color-card__swatch" style="background: #6489B1;"></div>
+          <div class="color-card__body">
+            <h3 class="color-card__name">Azul Profundo</h3>
+            <p class="color-card__location">Aparece en la esquina inferior derecha del isotipo, donde culmina el degradado del fondo azul.</p>
+            <div class="color-card__codes">
+              <div class="code-row" data-copy="Pantone 646C" onclick="copyCode(this)">
+                <span class="code-row__label">Pantone</span>
+                <span class="code-row__value">646 C</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="65, 40, 15, 0" onclick="copyCode(this)">
+                <span class="code-row__label">CMYK</span>
+                <span class="code-row__value">65, 40, 15, 0</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="#6489B1" onclick="copyCode(this)">
+                <span class="code-row__label">HEX</span>
+                <span class="code-row__value">#6489B1</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Negro Pymo -->
+        <article class="color-card color-card--negro">
+          <div class="color-card__swatch" style="background: #2C2B2A;"></div>
+          <div class="color-card__body">
+            <h3 class="color-card__name">Negro Pymo</h3>
+            <p class="color-card__location">Utilizado en la tipografía "PYMO" ubicada en la parte inferior del logo.</p>
+            <div class="color-card__codes">
+              <div class="code-row" data-copy="Pantone Black C" onclick="copyCode(this)">
+                <span class="code-row__label">Pantone</span>
+                <span class="code-row__value">Black C</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="70, 65, 65, 65" onclick="copyCode(this)">
+                <span class="code-row__label">CMYK</span>
+                <span class="code-row__value">70, 65, 65, 65</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="#2C2B2A" onclick="copyCode(this)">
+                <span class="code-row__label">HEX</span>
+                <span class="code-row__value">#2C2B2A</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blanco -->
+        <article class="color-card color-card--blanco">
+          <div class="color-card__swatch" style="background: #FFFFFF;"></div>
+          <div class="color-card__body">
+            <h3 class="color-card__name">Blanco</h3>
+            <p class="color-card__location">Presente en el símbolo "P" (isotipo) centrado sobre el fondo degradado, y como color de fondo general del logo.</p>
+            <div class="color-card__codes">
+              <div class="code-row" data-copy="Pantone 000C" onclick="copyCode(this)">
+                <span class="code-row__label">Pantone</span>
+                <span class="code-row__value">000 C</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="0, 0, 0, 0" onclick="copyCode(this)">
+                <span class="code-row__label">CMYK</span>
+                <span class="code-row__value">0, 0, 0, 0</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+              <div class="code-row" data-copy="#FFFFFF" onclick="copyCode(this)">
+                <span class="code-row__label">HEX</span>
+                <span class="code-row__value">#FFFFFF</span>
+                <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Bulk Copy -->
+    <section class="section" id="copiar">
+      <div class="section__header">
+        <h2 class="section__title">Copiar Todos los Colores</h2>
+        <p class="section__desc">Copia los 4 colores de la paleta en el formato que necesites</p>
+      </div>
+      <div class="bulk-actions">
+        <button class="btn" id="btnCopyPantone" onclick="copyBulk('pantone', this)">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar Pantone
+        </button>
+        <button class="btn" id="btnCopyCMYK" onclick="copyBulk('cmyk', this)">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar CMYK
+        </button>
+        <button class="btn" id="btnCopyHEX" onclick="copyBulk('hex', this)">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar HEX
+        </button>
+      </div>
+    </section>
+
+    <!-- Gradient -->
+    <section class="section" id="degradado">
+      <div class="section__header">
+        <h2 class="section__title">Degradado del Isotipo</h2>
+        <p class="section__desc">El fondo del isotipo utiliza un degradado diagonal entre los dos azules de la marca</p>
+      </div>
+      <div class="gradient-showcase">
+        <div class="gradient-preview">
+          <span class="gradient-label">#4597CB</span>
+          <span class="gradient-label">#6489B1</span>
+        </div>
+        <div class="gradient-body">
+          <h3 class="gradient-body__title">Código CSS del degradado</h3>
+          <p class="gradient-body__desc">Haz clic para copiar el código CSS listo para usar en tus proyectos.</p>
+          <div class="gradient-code" data-copy="background: linear-gradient(135deg, #4597CB, #6489B1);" onclick="copyCode(this)">
+            <code class="gradient-code__value">background: linear-gradient(135deg, #4597CB, #6489B1);</code>
+            <svg class="code-row__copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contrast -->
+    <section class="section" id="contraste">
+      <div class="section__header">
+        <h2 class="section__title">Contraste de Colores</h2>
+        <p class="section__desc">Ratios de contraste entre combinaciones clave de la paleta (WCAG 2.1)</p>
+      </div>
+      <div class="contrast-info">
+        <div class="contrast-row">
+          <div class="contrast-swatches">
+            <div class="contrast-swatch" style="background: #2C2B2A;"></div>
+            <div class="contrast-swatch" style="background: #FFFFFF; border-color: #E4E4EF;"></div>
+          </div>
+          <span class="contrast-text">Negro Pymo sobre Blanco</span>
+          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">15.4:1</span>
+          <span class="contrast-badge contrast-badge--aaa">AAA</span>
+        </div>
+        <div class="contrast-row">
+          <div class="contrast-swatches">
+            <div class="contrast-swatch" style="background: #4597CB;"></div>
+            <div class="contrast-swatch" style="background: #FFFFFF; border-color: #E4E4EF;"></div>
+          </div>
+          <span class="contrast-text">Azul Cielo sobre Blanco</span>
+          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">3.1:1</span>
+          <span class="contrast-badge contrast-badge--fail">No pasa</span>
+        </div>
+        <div class="contrast-row">
+          <div class="contrast-swatches">
+            <div class="contrast-swatch" style="background: #4597CB;"></div>
+            <div class="contrast-swatch" style="background: #2C2B2A;"></div>
+          </div>
+          <span class="contrast-text">Azul Cielo sobre Negro Pymo</span>
+          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">4.9:1</span>
+          <span class="contrast-badge contrast-badge--aa">AA</span>
+        </div>
+        <div class="contrast-row">
+          <div class="contrast-swatches">
+            <div class="contrast-swatch" style="background: #FFFFFF; border-color: #E4E4EF;"></div>
+            <div class="contrast-swatch" style="background: #6489B1;"></div>
+          </div>
+          <span class="contrast-text">Blanco sobre Azul Profundo</span>
+          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">3.9:1</span>
+          <span class="contrast-badge contrast-badge--aa">AA Grande</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section" id="descarga" style="text-align: center;">
+      <div class="section__header">
+        <h2 class="section__title">Descargar Logo</h2>
+        <p class="section__desc">Descarga el logo oficial de Pymo en formato PNG</p>
+      </div>
+      <a href="logo-pymo.png" download="Logo-Pymo.png" class="btn btn--primary" id="btnDownload">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar PNG
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Pymo. Guía de marca para uso de socios y colaboradores.</p>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <svg class="toast__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastText">¡Copiado!</span>
+  </div>
+
+  <script>
+    // ===== Color data =====
+    const colors = [
+      { name: 'Azul Cielo',     pantone: 'Pantone 7688C',   cmyk: '70, 28, 4, 0',    hex: '#4597CB' },
+      { name: 'Azul Profundo',  pantone: 'Pantone 646C',    cmyk: '65, 40, 15, 0',   hex: '#6489B1' },
+      { name: 'Negro Pymo',     pantone: 'Pantone Black C', cmyk: '70, 65, 65, 65',  hex: '#2C2B2A' },
+      { name: 'Blanco',         pantone: 'Pantone 000C',    cmyk: '0, 0, 0, 0',      hex: '#FFFFFF' },
+    ];
+
+    // ===== Toast =====
+    let toastTimeout;
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toastText');
+      toastText.textContent = text;
+      toast.classList.add('visible');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove('visible'), 2200);
+    }
+
+    // ===== Copy single code =====
+    function copyCode(el) {
+      const text = el.dataset.copy;
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        showToast('¡Copiado! ' + text);
+        setTimeout(() => el.classList.remove('copied'), 1500);
+      });
+    }
+
+    // ===== Bulk copy =====
+    function copyBulk(format, btn) {
+      let text;
+      switch (format) {
+        case 'pantone':
+          text = colors.map(c => c.name + ': ' + c.pantone).join('\n');
+          break;
+        case 'cmyk':
+          text = colors.map(c => c.name + ': CMYK(' + c.cmyk + ')').join('\n');
+          break;
+        case 'hex':
+          text = colors.map(c => c.name + ': ' + c.hex).join('\n');
+          break;
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.innerHTML;
+        btn.classList.add('copied');
+        showToast('¡4 colores copiados en ' + format.toUpperCase() + '!');
+        setTimeout(() => btn.classList.remove('copied'), 1800);
+      });
+    }
+  </script>
+
+</body>
+</html>
