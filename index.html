@@ -526,6 +526,148 @@
       text-decoration: underline;
     }
 
+    /* ===== Anatomy Section ===== */
+    .anatomy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      animation: fadeInUp 0.7s ease-out both;
+      animation-delay: 0.15s;
+      padding: 0 16px;
+    }
+
+    .anatomy__side {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      flex: 1;
+      max-width: 240px;
+    }
+
+    .anatomy__side--left {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .anatomy__side--right {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .anatomy__label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: default;
+      transition: transform 0.25s ease;
+    }
+
+    .anatomy__label:hover {
+      transform: scale(1.04);
+    }
+
+    .anatomy__side--left .anatomy__label {
+      flex-direction: row-reverse;
+    }
+
+    .anatomy__dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .anatomy__label-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .anatomy__label-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .anatomy__label-hex {
+      font-size: 0.75rem;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .anatomy__center {
+      position: relative;
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+    }
+
+    .anatomy__isotipo-wrap {
+      width: 300px;
+      height: 300px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .anatomy__isotipo {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Crop: show only the square isotipo, hide the PYMO text below */
+      /* The image is taller than wide; the square is ~83% of image height */
+      object-fit: cover;
+      object-position: top center;
+      height: 100%;
+    }
+
+    /* SVG overlay for annotation lines */
+    .anatomy__svg {
+      position: absolute;
+      top: 0;
+      left: -240px;
+      width: calc(300px + 480px);
+      height: 300px;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .anatomy__svg line {
+      stroke-dasharray: 5 4;
+      stroke-width: 1.2;
+      opacity: 0.45;
+    }
+
+    .anatomy__svg .marker-dot {
+      opacity: 0.9;
+    }
+
+    /* Pulse ring animation on the isotipo dots */
+    .anatomy__svg .pulse-ring {
+      animation: pulseRing 2.5s ease-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        r: 5;
+        opacity: 0.5;
+      }
+      70% {
+        r: 16;
+        opacity: 0;
+      }
+      100% {
+        r: 16;
+        opacity: 0;
+      }
+    }
+
     /* ===== Animations ===== */
     @keyframes fadeInUp {
       from {
@@ -547,6 +689,46 @@
     }
 
     /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .anatomy {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .anatomy__side {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 100%;
+      }
+
+      .anatomy__side--left,
+      .anatomy__side--right {
+        align-items: center;
+        text-align: center;
+      }
+
+      .anatomy__side--left .anatomy__label {
+        flex-direction: row;
+      }
+
+      .anatomy__center {
+        width: 260px;
+        height: 260px;
+        order: -1;
+      }
+
+      .anatomy__isotipo-wrap {
+        width: 260px;
+        height: 260px;
+      }
+
+      .anatomy__svg {
+        display: none;
+      }
+    }
+
     @media (max-width: 640px) {
       .hero {
         padding: 40px 16px 32px;
@@ -577,6 +759,16 @@
         flex-wrap: wrap;
         gap: 8px;
       }
+
+      .anatomy__center {
+        width: 220px;
+        height: 220px;
+      }
+
+      .anatomy__isotipo-wrap {
+        width: 220px;
+        height: 220px;
+      }
     }
   </style>
 </head>
@@ -590,6 +782,84 @@
   </header>
 
   <main class="container">
+
+    <!-- Anatomy of the Isotipo -->
+    <section class="section" id="anatomia">
+      <div class="section__header">
+        <h2 class="section__title">Anatomía del Isotipo</h2>
+        <p class="section__desc">Ubicación exacta de cada color dentro del isotipo de Pymo</p>
+      </div>
+
+      <div class="anatomy">
+        <!-- Left labels -->
+        <div class="anatomy__side anatomy__side--left">
+          <div class="anatomy__label" data-color="azul-cielo">
+            <div class="anatomy__label-text">
+              <span class="anatomy__label-name">Azul Cielo</span>
+              <span class="anatomy__label-hex">#4597CB</span>
+            </div>
+            <div class="anatomy__dot" style="background: #4597CB;"></div>
+          </div>
+          <div class="anatomy__label" data-color="blanco">
+            <div class="anatomy__label-text">
+              <span class="anatomy__label-name">Blanco</span>
+              <span class="anatomy__label-hex">#FFFFFF</span>
+            </div>
+            <div class="anatomy__dot" style="background: #FFFFFF; border: 1px solid #ddd;"></div>
+          </div>
+        </div>
+
+        <!-- Center: cropped isotipo with SVG overlay -->
+        <div class="anatomy__center">
+          <div class="anatomy__isotipo-wrap">
+            <img src="logo-pymo.png" alt="Isotipo de Pymo (solo el cuadrado con degradado y la P)" class="anatomy__isotipo" width="300" height="300">
+          </div>
+
+          <!--
+            SVG overlay: lines connecting labels to specific spots on the isotipo.
+            The SVG coordinate system:
+            - The isotipo square occupies x: 240..540, y: 0..300  (center area, 300px wide)
+            - Left labels are at roughly x: 0..240
+            - Right labels are at roughly x: 540..780
+            Total SVG width: 780, height: 300
+          -->
+          <svg class="anatomy__svg" viewBox="0 0 780 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Azul Cielo: top-left area of gradient → left label (1st) -->
+            <!-- Dot on isotipo at ~20%, 20% of the square = 240+60=300, 60 -->
+            <circle class="pulse-ring" cx="300" cy="60" fill="#4597CB" r="5"/>
+            <circle class="marker-dot" cx="300" cy="60" r="5" fill="#4597CB"/>
+            <line x1="295" y1="60" x2="228" y2="60" stroke="#4597CB"/>
+            <!-- Arrow tip -->
+            <polygon points="232,56 224,60 232,64" fill="#4597CB" opacity="0.6"/>
+
+            <!-- Blanco: center P of the isotipo → left label (2nd) -->
+            <!-- The P is roughly centered: 240+150=390, 140 -->
+            <circle class="pulse-ring" cx="380" cy="140" fill="#999" r="5"/>
+            <circle class="marker-dot" cx="380" cy="140" r="5" fill="white" stroke="#ccc" stroke-width="1"/>
+            <line x1="375" y1="140" x2="228" y2="175" stroke="#aaa"/>
+            <polygon points="232,171 222,175 232,179" fill="#aaa" opacity="0.6"/>
+
+            <!-- Azul Profundo: bottom-right area of gradient → right label (1st) -->
+            <!-- Bottom-right of isotipo: 240+240=480, 240 -->
+            <circle class="pulse-ring" cx="480" cy="240" fill="#6489B1" r="5"/>
+            <circle class="marker-dot" cx="480" cy="240" r="5" fill="#6489B1"/>
+            <line x1="485" y1="240" x2="552" y2="150" stroke="#6489B1"/>
+            <polygon points="548,146 556,150 548,154" fill="#6489B1" opacity="0.6"/>
+          </svg>
+        </div>
+
+        <!-- Right labels -->
+        <div class="anatomy__side anatomy__side--right">
+          <div class="anatomy__label" data-color="azul-profundo">
+            <div class="anatomy__dot" style="background: #6489B1;"></div>
+            <div class="anatomy__label-text">
+              <span class="anatomy__label-name">Azul Profundo</span>
+              <span class="anatomy__label-hex">#6489B1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Color Palette -->
     <section class="section" id="colores">
