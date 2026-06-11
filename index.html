@@ -3,12 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pymo | Guía de Marca y Colores Oficiales</title>
+  <title>Pymo | Colores Oficiales de Marca</title>
   <meta name="description" content="Guía oficial de marca Pymo. Consulta y copia los colores corporativos en Pantone, CMYK y HEX. Descarga el logo oficial.">
-  <meta property="og:title" content="Pymo | Guía de Marca y Colores Oficiales">
-  <meta property="og:description" content="Paleta de colores oficial de Pymo. Códigos copiables en Pantone, CMYK y HEX.">
-  <meta property="og:image" content="logo-pymo.png">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hotheos.github.io/pymo-colores/">
+  <meta property="og:title" content="Pymo | Colores Oficiales de Marca">
+  <meta property="og:description" content="Paleta de colores verificada del logo de Pymo. Códigos copiables en Pantone, CMYK y HEX, con ubicación exacta de cada color en el isotipo.">
+  <meta property="og:image" content="https://hotheos.github.io/pymo-colores/logo-pymo.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1381">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Pymo">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pymo | Colores Oficiales de Marca">
+  <meta name="twitter:description" content="Paleta de colores verificada del logo de Pymo. Códigos copiables en Pantone, CMYK y HEX.">
+  <meta name="twitter:image" content="https://hotheos.github.io/pymo-colores/logo-pymo.png">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='12' width='100' height='100' fill='%233ABEED'/><text x='50' y='68' font-size='55' font-weight='bold' fill='white' text-anchor='middle' font-family='system-ui'>P</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -335,82 +348,6 @@
     .gradient-code.copied {
       border-color: #34C759;
       background: #F0FFF4;
-    }
-
-    /* ===== Contrast Info ===== */
-    .contrast-info {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      animation: fadeInUp 0.6s ease-out both;
-      animation-delay: 0.4s;
-    }
-
-    .contrast-info__title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .contrast-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-    }
-
-    .contrast-row + .contrast-row {
-      border-top: 1px solid var(--border);
-    }
-
-    .contrast-swatches {
-      display: flex;
-      gap: 0;
-      flex-shrink: 0;
-    }
-
-    .contrast-swatch {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      border: 2px solid var(--bg-card);
-      box-shadow: 0 0 0 1px var(--border);
-    }
-
-    .contrast-swatch:last-child {
-      margin-left: -10px;
-    }
-
-    .contrast-text {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      flex: 1;
-    }
-
-    .contrast-badge {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-      letter-spacing: 0.04em;
-      flex-shrink: 0;
-    }
-
-    .contrast-badge--aaa {
-      background: #E8F9EE;
-      color: #1B7A3D;
-    }
-
-    .contrast-badge--aa {
-      background: #FFF8E1;
-      color: #9A7B1A;
-    }
-
-    .contrast-badge--fail {
-      background: #FFEAEA;
-      color: #C0392B;
     }
 
     /* ===== Bulk Actions ===== */
@@ -765,10 +702,7 @@
         height: 120px;
       }
 
-      .contrast-row {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
+
 
       .anatomy__center {
         width: 220px;
@@ -1012,51 +946,6 @@
       </div>
     </section>
 
-    <!-- Contrast -->
-    <section class="section" id="contraste">
-      <div class="section__header">
-        <h2 class="section__title">Contraste de Colores</h2>
-        <p class="section__desc">Ratios de contraste entre combinaciones clave de la paleta (WCAG 2.1)</p>
-      </div>
-      <div class="contrast-info">
-        <div class="contrast-row">
-          <div class="contrast-swatches">
-            <div class="contrast-swatch" style="background: #2C2B2A;"></div>
-            <div class="contrast-swatch" style="background: #FFFFFF; border-color: #E4E4EF;"></div>
-          </div>
-          <span class="contrast-text">Negro Pymo sobre Blanco</span>
-          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">15.4:1</span>
-          <span class="contrast-badge contrast-badge--aaa">AAA</span>
-        </div>
-        <div class="contrast-row">
-          <div class="contrast-swatches">
-            <div class="contrast-swatch" style="background: #3ABEED;"></div>
-            <div class="contrast-swatch" style="background: #FFFFFF; border-color: #E4E4EF;"></div>
-          </div>
-          <span class="contrast-text">Azul Cielo sobre Blanco</span>
-          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">2.1:1</span>
-          <span class="contrast-badge contrast-badge--fail">No pasa</span>
-        </div>
-        <div class="contrast-row">
-          <div class="contrast-swatches">
-            <div class="contrast-swatch" style="background: #3ABEED;"></div>
-            <div class="contrast-swatch" style="background: #2C2B2A;"></div>
-          </div>
-          <span class="contrast-text">Azul Cielo sobre Negro Pymo</span>
-          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">6.6:1</span>
-          <span class="contrast-badge contrast-badge--aa">AA</span>
-        </div>
-        <div class="contrast-row">
-          <div class="contrast-swatches">
-            <div class="contrast-swatch" style="background: #FFFFFF; border-color: #E4E4EF;"></div>
-            <div class="contrast-swatch" style="background: #757EBA;"></div>
-          </div>
-          <span class="contrast-text">Blanco sobre Azul Profundo</span>
-          <span class="contrast-text" style="font-weight: 600; font-family: 'SF Mono', monospace; font-size: 0.8rem; flex: 0;">3.9:1</span>
-          <span class="contrast-badge contrast-badge--aa">AA Grande</span>
-        </div>
-      </div>
-    </section>
 
     <!-- Download -->
     <section class="section" id="descarga" style="text-align: center;">
