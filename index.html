@@ -82,31 +82,22 @@
       animation: fadeInUp 0.8s ease-out;
     }
 
-    .hero__logo {
-      width: 220px;
-      height: auto;
-      filter: drop-shadow(0 8px 32px rgba(69, 151, 203, 0.2));
-      transition: transform 0.4s ease;
-    }
-
-    .hero__logo:hover {
-      transform: scale(1.03);
-    }
-
     .hero__title {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--text-secondary);
-      margin-top: 28px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--azul-cielo), var(--azul-profundo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.04em;
     }
 
     .hero__subtitle {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      margin-top: 8px;
-      letter-spacing: 0.05em;
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+      font-weight: 400;
     }
 
     /* ===== Section headers ===== */
@@ -386,14 +377,33 @@
     }
 
     .btn--primary {
-      background: linear-gradient(135deg in oklch, var(--azul-cielo), var(--azul-profundo));
+      background: linear-gradient(to bottom, #5ec8f0, var(--azul-cielo) 40%, #3193c9);
       color: white;
-      border-color: transparent;
+      border: none;
+      box-shadow:
+        0 4px 0 #2a7ba8,
+        0 6px 12px rgba(42, 123, 168, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      transform: translateY(0);
     }
 
     .btn--primary:hover {
-      border-color: transparent;
-      box-shadow: 0 6px 24px rgba(69, 151, 203, 0.3);
+      background: linear-gradient(to bottom, #6fd4f8, #45b3e6 40%, #3a9fd5);
+      border: none;
+      box-shadow:
+        0 5px 0 #2a7ba8,
+        0 8px 20px rgba(42, 123, 168, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn--primary:active {
+      box-shadow:
+        0 1px 0 #2a7ba8,
+        0 2px 6px rgba(42, 123, 168, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transform: translateY(3px);
     }
 
     .btn.copied {
@@ -466,153 +476,16 @@
     /* ===== Anatomy Section ===== */
     .anatomy {
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 0;
-      position: relative;
       animation: fadeInUp 0.7s ease-out both;
       animation-delay: 0.15s;
       padding: 0 16px;
     }
 
-    .anatomy__side {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      flex: 1;
-      max-width: 260px;
-      justify-content: center;
-    }
-
-    .anatomy__side--left {
-      align-items: flex-end;
-      text-align: right;
-      padding-right: 8px;
-    }
-
-    .anatomy__side--right {
-      align-items: flex-start;
-      text-align: left;
-      padding-left: 8px;
-    }
-
-    .anatomy__label {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      cursor: default;
-      transition: transform 0.25s ease;
-    }
-
-    .anatomy__label:hover {
-      transform: scale(1.04);
-    }
-
-    .anatomy__side--left .anatomy__label {
-      flex-direction: row-reverse;
-    }
-
-    .anatomy__dot {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      border: 2.5px solid #FFFFFF;
-    }
-
-    .anatomy__label-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .anatomy__label-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.2;
-    }
-
-    .anatomy__label-hex {
-      font-size: 0.78rem;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-    }
-
-    .anatomy__center {
-      position: relative;
-      flex-shrink: 0;
-      width: 300px;
-      height: 300px;
-    }
-
-    .anatomy__isotipo-wrap {
-      width: 300px;
-      height: 300px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-    }
-
-    .anatomy__isotipo {
+    .anatomy__diagram {
       width: 100%;
+      max-width: 560px;
       height: auto;
-      display: block;
-      /* Crop: show only the square isotipo, hide the PYMO text below */
-      /* The image is taller than wide; the square is ~83% of image height */
-      object-fit: cover;
-      object-position: top center;
-      height: 100%;
-    }
-
-    /* SVG overlay for annotation lines */
-    .anatomy__svg {
-      position: absolute;
-      top: 0;
-      left: -240px;
-      width: calc(300px + 480px);
-      height: 300px;
-      pointer-events: none;
-      overflow: visible;
-    }
-
-    .anatomy__svg line {
-      stroke: #555;
-      stroke-width: 1.5;
-    }
-
-    /* Unfilled circle rings on the isotipo */
-    .anatomy__svg .marker-ring {
-      fill: none;
-      stroke: white;
-      stroke-width: 2.5;
-      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
-    }
-
-    /* Pulse ring animation on the isotipo circles */
-    .anatomy__svg .pulse-ring {
-      fill: none;
-      stroke: white;
-      stroke-width: 1.5;
-      animation: pulseRing 2.8s ease-out infinite;
-    }
-
-    @keyframes pulseRing {
-      0% {
-        r: 20;
-        opacity: 0.6;
-      }
-      70% {
-        r: 34;
-        opacity: 0;
-      }
-      100% {
-        r: 34;
-        opacity: 0;
-      }
     }
 
     /* ===== Animations ===== */
@@ -637,43 +510,6 @@
 
     /* ===== Responsive ===== */
     @media (max-width: 900px) {
-      .anatomy {
-        flex-direction: column;
-        gap: 32px;
-      }
-
-      .anatomy__side {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        max-width: 100%;
-      }
-
-      .anatomy__side--left,
-      .anatomy__side--right {
-        align-items: center;
-        text-align: center;
-      }
-
-      .anatomy__side--left .anatomy__label {
-        flex-direction: row;
-      }
-
-      .anatomy__center {
-        width: 260px;
-        height: 260px;
-        order: -1;
-      }
-
-      .anatomy__isotipo-wrap {
-        width: 260px;
-        height: 260px;
-      }
-
-      .anatomy__svg {
-        display: none;
-      }
     }
 
     @media (max-width: 640px) {
@@ -681,8 +517,8 @@
         padding: 40px 16px 32px;
       }
 
-      .hero__logo {
-        width: 160px;
+      .hero__title {
+        font-size: 1.8rem;
       }
 
       .colors-grid {
@@ -704,15 +540,7 @@
 
 
 
-      .anatomy__center {
-        width: 220px;
-        height: 220px;
-      }
 
-      .anatomy__isotipo-wrap {
-        width: 220px;
-        height: 220px;
-      }
     }
   </style>
 </head>
@@ -720,73 +548,13 @@
 
   <!-- Hero -->
   <header class="hero">
-    <img src="logo-pymo.png" alt="Logo oficial de Pymo" class="hero__logo" width="220" height="264">
     <h1 class="hero__title">Guía de Marca</h1>
     <p class="hero__subtitle">Colores oficiales, códigos y recursos para diseñadores</p>
   </header>
 
   <main class="container">
 
-    <!-- Anatomy of the Isotipo -->
-    <section class="section" id="anatomia">
-      <div class="section__header">
-        <h2 class="section__title">Anatomía del Isotipo</h2>
-        <p class="section__desc">Ubicación exacta de cada color dentro del isotipo de Pymo</p>
-      </div>
-
-      <div class="anatomy">
-        <!-- Left label: Azul Cielo -->
-        <div class="anatomy__side anatomy__side--left">
-          <div class="anatomy__label" data-color="azul-cielo">
-            <div class="anatomy__label-text">
-              <span class="anatomy__label-name">Azul Cielo</span>
-              <span class="anatomy__label-hex">#3ABEED</span>
-            </div>
-            <div class="anatomy__dot" style="background: #3ABEED;"></div>
-          </div>
-        </div>
-
-        <!-- Center: cropped isotipo with SVG overlay -->
-        <div class="anatomy__center">
-          <div class="anatomy__isotipo-wrap">
-            <img src="logo-pymo.png" alt="Isotipo de Pymo (solo el cuadrado con degradado y la P)" class="anatomy__isotipo" width="300" height="300">
-          </div>
-
-          <!--
-            SVG overlay: rings on isotipo + connector lines ending at isotipo edge.
-            Coordinate system: isotipo = x:240..540, y:0..300
-          -->
-          <svg class="anatomy__svg" viewBox="0 0 780 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-            <!-- Azul Cielo: white ring at top-left of gradient -->
-            <circle class="pulse-ring" cx="310" cy="70" r="20"/>
-            <circle class="marker-ring" cx="310" cy="70" r="20"/>
-            <!-- Gray connector line from ring to left edge -->
-            <line x1="290" y1="78" x2="240" y2="150"/>
-
-            <!-- Azul Violeta: white ring at bottom-right of gradient -->
-            <circle class="pulse-ring" cx="470" cy="230" r="20"/>
-            <circle class="marker-ring" cx="470" cy="230" r="20"/>
-            <!-- Gray connector line from ring to right edge -->
-            <line x1="490" y1="222" x2="540" y2="150"/>
-
-          </svg>
-        </div>
-
-        <!-- Right label: Azul Violeta -->
-        <div class="anatomy__side anatomy__side--right">
-          <div class="anatomy__label" data-color="azul-profundo">
-            <div class="anatomy__dot" style="background: #757EBA;"></div>
-            <div class="anatomy__label-text">
-              <span class="anatomy__label-name">Azul Violeta</span>
-              <span class="anatomy__label-hex">#757EBA</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Color Palette -->
+    <!-- Color Palette (now first) -->
     <section class="section" id="colores">
       <div class="section__header">
         <h2 class="section__title">Paleta de Colores</h2>
@@ -902,6 +670,72 @@
       </div>
     </section>
 
+    <!-- Anatomy of the Logo -->
+    <section class="section" id="anatomia">
+      <div class="section__header">
+        <h2 class="section__title">Anatomía del Logo</h2>
+        <p class="section__desc">Ubicación exacta de cada color dentro del logo completo de Pymo</p>
+      </div>
+
+      <div class="anatomy">
+        <!--
+          Full SVG diagram: logo flat + 4 color circles + arrows
+          viewBox 600x530: logo 280x378 centered at x=160 y=60
+          Isotipo square: y=60..340 | PYMO text: y=365..425
+        -->
+        <svg class="anatomy__diagram" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+              <polygon points="0 0, 8 3, 0 6" fill="#2C2B2A"/>
+            </marker>
+          </defs>
+
+          <!-- Logo image, flat, no shadow -->
+          <image href="logo-pymo.png" x="160" y="60" width="280" height="378"/>
+
+          <!-- ====== Azul Cielo (LEFT) ====== -->
+          <circle cx="68" cy="200" r="18" fill="#3ABEED"/>
+          <!-- Arrow → top-left of gradient -->
+          <line x1="86" y1="193" x2="195" y2="105" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+          <!-- ====== Azul Violeta (RIGHT) ====== -->
+          <circle cx="532" cy="200" r="18" fill="#757EBA"/>
+          <!-- Arrow → bottom-right of gradient -->
+          <line x1="514" y1="207" x2="412" y2="310" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+          <!-- ====== Blanco (TOP, with thin black border) ====== -->
+          <circle cx="300" cy="24" r="18" fill="#FFFFFF" stroke="#2C2B2A" stroke-width="1.2"/>
+          <!-- Arrow 1 → white P letter (curved left) -->
+          <path d="M285,40 Q220,120 260,190" fill="none" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <!-- Arrow 2 → white background (curves right to the white margin area) -->
+          <path d="M315,40 Q430,70 435,150" fill="none" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+          <!-- ====== Negro (BOTTOM) ====== -->
+          <circle cx="300" cy="500" r="18" fill="#2C2B2A"/>
+          <!-- Arrow → P -->
+          <line x1="287" y1="483" x2="207" y2="422" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <!-- Arrow → Y -->
+          <line x1="294" y1="482" x2="259" y2="422" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <!-- Arrow → M -->
+          <line x1="306" y1="482" x2="330" y2="405" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+          <!-- Arrow → O -->
+          <line x1="313" y1="483" x2="376" y2="424" stroke="#2C2B2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Download (right after anatomy) -->
+    <section class="section" id="descarga" style="text-align: center;">
+      <div class="section__header">
+        <h2 class="section__title">Descargar Logo</h2>
+        <p class="section__desc">Descarga el logo oficial de Pymo en formato PNG</p>
+      </div>
+      <a href="logo-pymo.png" download="Logo-Pymo.png" class="btn btn--primary" id="btnDownload">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar PNG
+      </a>
+    </section>
+
     <!-- Bulk Copy -->
     <section class="section" id="copiar">
       <div class="section__header">
@@ -946,18 +780,6 @@
       </div>
     </section>
 
-
-    <!-- Download -->
-    <section class="section" id="descarga" style="text-align: center;">
-      <div class="section__header">
-        <h2 class="section__title">Descargar Logo</h2>
-        <p class="section__desc">Descarga el logo oficial de Pymo en formato PNG</p>
-      </div>
-      <a href="logo-pymo.png" download="Logo-Pymo.png" class="btn btn--primary" id="btnDownload">
-        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Descargar PNG
-      </a>
-    </section>
 
   </main>
 
